@@ -11,4 +11,6 @@ for i in range(n):
         if i != j:
             if people[i][0] < people[j][0] and people[i][1] < people[j][1]:
                 res[i] += 1
-print(res)
+
+for i in res:
+    print(i, end=' ')
