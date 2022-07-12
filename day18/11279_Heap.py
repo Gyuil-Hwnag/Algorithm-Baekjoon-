@@ -7,6 +7,7 @@ dQ = deque()
 
 res = list()
 dQ.append(0)
+
 def Remove():
     if len(dQ) == 2:
         res.append(dQ.pop())
