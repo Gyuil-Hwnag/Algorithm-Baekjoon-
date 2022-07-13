@@ -2,8 +2,6 @@ import sys
 import heapq
 input = sys.stdin.readline
 
-input = sys.stdin.readline
-
 n = int(input())
 lhq = []
 rhq = []
