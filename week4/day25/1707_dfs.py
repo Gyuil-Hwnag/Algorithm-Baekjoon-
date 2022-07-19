@@ -6,7 +6,7 @@ def DFS(s, group):
     ch[s] = group
     for i in graph[s]:
         if ch[i] == 0:
-            if not dfs(i, -group):
+            if not DFS(i, -group):
                 return False
         elif ch[i] == group:
             return False
@@ -27,7 +27,7 @@ for _ in range(int(input())):
             continue
         if not res:
             break
-        res = dfs(i, 1)
+        res = DFS(i, 1)
     
     if res:
         print("YES")
