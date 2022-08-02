@@ -13,16 +13,18 @@ for _ in range(v):
         n.append([start, price])
     dy[s[0]] = n
 
-for i in range(v+1):
-    print("i: %d, dy: %s" %(i, dy[i]))
+# for i in range(v+1):
+#     print("i: %d, dy: %s" %(i, dy[i]))
 
-def bfs(start):
+def BFS(start):
     queue = deque()
     queue.append([start, 0])
+
     visited = [0 for _ in range(v + 1)]
     maxd = 0
     maxi = start
     visited[start] = 1
+    
     while queue:
         nowi, nowd = queue.popleft()
         if maxd < nowd:
@@ -34,6 +36,6 @@ def bfs(start):
                 visited[e] = 1
     return maxi, maxd
 
-tmpindex, tmpmax = bfs(1)
-finalindex, finalmax = bfs(tmpindex)
+tmpindex, tmpmax = BFS(1)
+finalindex, finalmax = BFS(tmpindex)
 print(finalmax)
