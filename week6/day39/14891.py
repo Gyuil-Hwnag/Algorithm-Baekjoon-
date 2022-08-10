@@ -26,7 +26,6 @@ def check_left(start, dirs):
         gears[start].rotate(dirs)
         
     
-
 gears = {}
 # 기준 톱니바퀴가 있을 때, 왼쪽과 맞닿는 지점은 idx 2, 오른쪽은 6이다.
 for i in range(1, 5):
@@ -42,7 +41,6 @@ for _ in range(n):
     # 기준 톱니바퀴를 회전시킨다.
     gears[num].rotate(dirs)
     
-
 result = 0
 for i in range(4):
     result += (2**i) * gears[i+1][0]
