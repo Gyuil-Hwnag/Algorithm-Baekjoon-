@@ -2,18 +2,17 @@ from collections import deque
 
 n, m, t = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(n)]
-# 동 - 서 - 남 - 북
 dx = [0, 0, 1, -1]
 dy = [1, -1, 0, 0]
 
 def rotate(x, d, k):
-    q = deque()
-    q.extend(graph[x])
+    dq = deque()
+    dq.extend(graph[x])
     if d == 0:
-        q.rotate(k)
+        dq.rotate(k)
     else:
-        q.rotate(-k)
-    graph[x] = list(q)
+        dq.rotate(-k)
+    graph[x] = list(dq)
 
 
 def change_avg():
@@ -37,14 +36,14 @@ def change_avg():
     return True
 
 def solve(x, y):
-    q = deque()
-    q.append((x, y))
+    dq = deque()
+    dq.append((x, y))
     visited[x][y] = True
     value = graph[x][y]
     graph[x][y] = 0
     count = 0
-    while q:
-        x, y = q.popleft()
+    while dq:
+        x, y = dq.popleft()
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
@@ -59,7 +58,7 @@ def solve(x, y):
                         count += 1
                         graph[nx][ny] = 0
                         visited[nx][ny] = True
-                        q.append((nx, ny))
+                        dq.append((nx, ny))
     if count == 0:
         graph[x][y] = value
     return count
@@ -76,16 +75,16 @@ for _ in range(t):
         break
     else:
         visited = [[False] * m for _ in range(n)]
-        count = 0
+        cnt = 0
         for i in range(n):
             for j in range(m):
                 if not visited[i][j] and graph[i][j] != 0:
-                    count += solve(i, j)
-        if count == 0:
+                    cnt += solve(i, j)
+        if cnt == 0:
             change_avg()
 
-answer = 0
+res = 0
 for i in range(n):
-    answer += sum(graph[i])
+    res += sum(graph[i])
 
-print(answer)
+print(res)
