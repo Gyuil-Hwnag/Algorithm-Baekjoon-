@@ -1,17 +1,17 @@
 ## 17299
-
 from collections import Counter
-from sys import stdin
+import sys
+input = sys.stdin.readline
 
-n = int(stdin.readline())
-nums = list(map(int, stdin.readline().split()))
-nums_count = Counter(nums)
-result = [-1] * n
+n = int(input())
+nums = list(map(int, input().split()))
+numCount = Counter(nums)
+res = [-1] * n
 stack = [0]
 
 for i in range(1, n):
-    while stack and nums_count[nums[stack[-1]]] < nums_count[nums[i]]:
-            result[stack.pop()] = nums[i]
+    while stack and numCount[nums[stack[-1]]] < numCount[nums[i]]:
+            res[stack.pop()] = nums[i]
     stack.append(i)
 
-print(*result)
+print(*res)
