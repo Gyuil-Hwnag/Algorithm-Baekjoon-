@@ -8,7 +8,9 @@ for _ in range(n):
         book[name] += 1
     else:
         book[name] = 1
+
 max = 0
+
 sbook = dict(sorted(book.items()))
 for i in sbook:
     if (sbook[i]) > max:
