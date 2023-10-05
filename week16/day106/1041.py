@@ -14,12 +14,10 @@ else:
     sumLists.append(min(nums[2],nums[3]))
     sumLists = sorted(sumLists)
 
-    #1,2,3면이 보여질때 주사위 최소값
     min1 = sumLists[0]
     min2 = sumLists[0] + sumLists[1]
     min3 = sumLists[0] + sumLists[1] + sumLists[2]
 
-    #1,2,3면이 보여지는 주사위 개수
     n1 = (n-2)*(n-2) + 4*(n-1)*(n-2)
     n2 = 4*(n-2) + 4*(n-1)
     n3 = 4
