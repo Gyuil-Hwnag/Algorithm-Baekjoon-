@@ -1,6 +1,8 @@
 ## 20301
 from collections import deque
+import sys
 
+input = sys.stdin.readline
 N, K, M = map(int, input().split())
 queue = deque(range(1, N+1))
 i = 0
