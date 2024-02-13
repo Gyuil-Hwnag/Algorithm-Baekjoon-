@@ -2,6 +2,7 @@ package com.example.d20240212
 
 import kotlin.math.pow
 
+
 object `11576` {
     @JvmStatic
     fun main(args: Array<String>) {
